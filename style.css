@@ -1,0 +1,231 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d1a26;
+    color: #c9e4ff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header and Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 26, 38, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00e0ff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: #c9e4ff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00e0ff;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080.png?text=Future+Pune+Cityscape') no-repeat center center/cover;
+    position: relative;
+    padding-top: 60px; /* To account for fixed header */
+}
+
+.hero-content {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: #00e0ff;
+    text-shadow: 0 0 15px #00e0ff;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00e0ff;
+    color: #0d1a26;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    background-color: #00aaff;
+}
+
+/* Main Sections */
+main {
+    padding-top: 60px; /* Space for fixed header */
+}
+
+.places-section, .about-section, .contact-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.places-section h2, .about-section h2, .contact-section h2 {
+    font-size: 2.5rem;
+    color: #00e0ff;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px #00e0ff;
+}
+
+.place-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(2, 49, 86, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+}
+
+.place-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+}
+
+.place-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.place-info {
+    padding: 25px;
+    text-align: left;
+}
+
+.place-info h3 {
+    font-size: 1.8rem;
+    color: #00e0ff;
+    margin-bottom: 10px;
+}
+
+.place-info p {
+    font-size: 1rem;
+    color: #c9e4ff;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #00e0ff;
+    color: #c9e4ff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #8da2b6;
+}
+
+.contact-form button {
+    background-color: #00e0ff;
+    color: #0d1a26;
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #00aaff;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d1a26;
+    border-top: 1px solid rgba(0, 224, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+    .place-card {
+        flex-direction: row;
+        text-align: left;
+    }
+    .place-card img {
+        width: 40%;
+        height: auto;
+    }
+    .place-info {
+        width: 60%;
+    }
+}
